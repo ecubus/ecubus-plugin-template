@@ -1,0 +1,22 @@
+{
+  "id": "app-template",
+  "name": "App Template",
+  "version": "1.0.0",
+  "description": "一个简单的应用模板，用于开发插件",
+  "author": "EcuBus",
+  "extensions": [
+    {
+      "targetTab": "test",
+      "items": [
+        {
+          "type": "button",
+          "id": "simple-test-helper",
+          "label": "Test Helper",
+          "icon": "mdi:help-circle",
+          "onClick": "showTestHelp",
+          "entry": "dist/index.html"
+        }
+      ]
+    }
+  ]
+}

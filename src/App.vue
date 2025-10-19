@@ -1,4 +1,8 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+const props = window.$wujie?.props // {data: xxx, methods: xxx}
+console.log('props', props)
+console.log('parent', window.parent)
+</script>
 
 <template>
   <h1>You did it!</h1>
