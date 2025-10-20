@@ -14,7 +14,7 @@
           "label": "Test Helper",
           "icon": "mdi:help-circle",
           "onClick": "showTestHelp",
-          "entry": "dist/index.html"
+          "entry": "http://localhost:5173/"
         }
       ]
     }

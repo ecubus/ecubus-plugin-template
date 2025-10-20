@@ -1,40 +1,8 @@
+/* eslint-disable @typescript-eslint/no-wrapper-object-types */
+/* eslint-disable @typescript-eslint/no-explicit-any */
+import { ElectronAPI } from '@electron-toolkit/preload'
+
 declare global {
-    interface EventMap {
-        'update:modelValue': (pluginId: string, id: string, data: any) => void
-    }
-    interface EmitMap {
-        'update:modelValue': {
-            pluginId: string
-            id: string
-            data: any
-        }
-    }
-
-    type EventCallback<T = any> = (...args: T[]) => void
-    type AllEventCallback = (event: string, ...args: any[]) => void
-
-    interface EventBus {
-        /** 监听指定事件 */
-        $on<K extends keyof EventMap>(event: K, fn: EventMap[K]): EventBus
-
-        /** 监听所有事件 */
-        $onAll(fn: AllEventCallback): EventBus
-
-        /** 监听指定事件一次 */
-        $once<K extends keyof EventMap>(event: K, fn: EventMap[K]): void
-
-        /** 取消监听指定事件 */
-        $off<K extends keyof EventMap>(event: K, fn: EventMap[K]): EventBus
-
-        /** 取消监听所有事件 */
-        $offAll(fn: AllEventCallback): EventBus
-
-        /** 触发指定事件 */
-        $emit<K extends keyof EventMap>(event: K, ...args: Parameters<EventMap[K]>): EventBus
-
-        /** 清空所有事件监听 */
-        $clear(): EventBus
-    }
     interface Window {
         /**
          * 是否存在无界
@@ -77,6 +45,7 @@ declare global {
             props?: { [key: string]: any }
             location?: Object
         }
+        electron: ElectronAPI
     }
 }
 
