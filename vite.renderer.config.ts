@@ -13,14 +13,14 @@ export default defineConfig({
   base: './',
   resolve: {
     alias: {
-      '@': fileURLToPath(new URL('./src', import.meta.url))
+      '@': fileURLToPath(new URL('./src/renderer', import.meta.url))
     },
   },
   build: {
     outDir: path.resolve(__dirname, 'dist/renderer'),
     rollupOptions: {
       external: ['vue', 'wujie'],
-      
+
       output: {
         entryFileNames: '[name].js',
         chunkFileNames: '[name].js',

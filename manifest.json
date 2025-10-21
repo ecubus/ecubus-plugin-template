@@ -4,10 +4,11 @@
   "version": "1.0.0",
   "description": "一个简单的应用模板，用于开发插件",
   "author": "EcuBus",
+  "mainEntry": "dist/main/index.cjs",
   "extensions": [
     {
       "targetTab": "test",
-      "mainEntry":"dist/main/index.js",
+
       "items": [
         {
           "type": "button",

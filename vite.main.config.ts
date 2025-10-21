@@ -10,10 +10,10 @@ export default defineConfig({
     lib: {
       entry: './src/main/index.ts',
       formats: ['cjs'],
-      fileName: () => 'index.js',
+      fileName: () => 'index.cjs',
     },
     rollupOptions: {
-      external: ["worker_threads","child_process","os"],
+      external: ["worker_threads", "child_process", "os"],
     }
   }
 })
