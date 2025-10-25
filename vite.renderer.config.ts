@@ -19,7 +19,7 @@ export default defineConfig({
   build: {
     outDir: path.resolve(__dirname, 'dist/renderer'),
     rollupOptions: {
-      external: ['vue', 'wujie'],
+      external: ['vue', 'wujie', '@ecubus-pro/renderer-plugin-sdk'],
 
       output: {
         entryFileNames: '[name].js',
