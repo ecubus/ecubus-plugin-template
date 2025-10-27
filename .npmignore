@@ -1,0 +1,57 @@
+# Source files
+src/
+test/
+tests/
+*.test.ts
+*.spec.ts
+
+# Config files
+.vscode/
+.idea/
+*.code-workspace
+tsconfig.*.json
+tsconfig.json
+vite.*.config.ts
+eslint.config.ts
+.prettierrc
+.prettierignore
+.editorconfig
+
+# Git
+.git/
+.gitignore
+.gitattributes
+
+# CI/CD
+.github/
+
+# Dependencies
+node_modules/
+
+# Build artifacts (we want to keep dist/ for the template)
+*.log
+*.tsbuildinfo
+
+# Environment
+.env
+.env.*
+!.env.example
+
+# OS files
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+*~
+
+# Development
+*.map
+.cache/
+
+# Documentation (keep README.md but exclude others)
+docs/
+
+# Other
+coverage/
+.nyc_output/
+

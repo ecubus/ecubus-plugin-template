@@ -1,8 +1,8 @@
 {
-  "id": "app-template",
-  "name": "App Template",
+  "id": "hello-world-plugin",
+  "name": "Hello World Plugin",
   "version": "1.0.0",
-  "description": "一个简单的应用模板，用于开发插件",
+  "description": "一个简单的 EcuBus 插件示例，展示了插件开发的基本功能 / A simple EcuBus plugin example demonstrating basic plugin development",
   "author": "EcuBus",
   "mainEntry": "dist/main/index.cjs",
   "icon": "icon.png",
@@ -10,15 +10,14 @@
   "extensions": [
     {
       "targetTab": "test",
-
       "items": [
         {
           "type": "button",
-          "id": "simple-test-helper",
-          "label": "Test Helper",
-          "icon": "mdi:help-circle",
-          "onClick": "showTestHelp",
-          "entry": "http://localhost:5174/"
+          "id": "hello-world-button",
+          "label": "Hello World",
+          "icon": "mdi:hand-wave",
+          "onClick": "showHelloWorld",
+          "entry": "http://localhost:5173/"
         }
       ]
     }
