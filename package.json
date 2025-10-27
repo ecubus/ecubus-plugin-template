@@ -5,6 +5,10 @@
   "type": "module",
   "author": "EcuBus",
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ecubus/ecubus-plugin-template"
+  },
   "keywords": [
     "ecubus",
     "plugin",
@@ -29,7 +33,6 @@
     "build": "npm run build:main && npm run build:renderer",
     "build:main": "vite build --config vite.main.config.ts",
     "build:renderer": "vite build --config vite.renderer.config.ts",
-    "lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs,.ts,.tsx,.cts,.mts --fix --ignore-path .gitignore",
     "format": "prettier --write src/"
   },
   "dependencies": {
