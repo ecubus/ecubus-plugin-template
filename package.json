@@ -1,6 +1,6 @@
 {
   "name": "create-ecubus-plugin",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Create EcuBus plugin projects from a template",
   "type": "module",
   "author": "EcuBus",
@@ -20,7 +20,19 @@
   },
   "files": [
     "bin",
-    "template",
+    "src",
+    "public",
+    "icon.png",
+    "index.html",
+    "manifest.json",
+    "env.d.ts",
+    "eslint.config.ts",
+    "tsconfig.json",
+    "tsconfig.app.json",
+    "tsconfig.node.json",
+    "vite.main.config.ts",
+    "vite.renderer.config.ts",
+    "DEVELOPMENT.md",
     "README.md"
   ],
   "engines": {

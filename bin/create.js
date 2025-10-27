@@ -132,8 +132,6 @@ try {
   console.log('    Start the development server\n')
   console.log(`  ${colors.cyan}npm run build${colors.reset}`)
   console.log('    Build for production\n')
-  console.log(`  ${colors.cyan}npm run lint${colors.reset}`)
-  console.log('    Lint and fix files\n')
   console.log('We suggest that you begin by typing:\n')
   console.log(`  ${colors.cyan}cd ${projectName}${colors.reset}`)
   console.log(`  ${colors.cyan}npm install${colors.reset}`)
