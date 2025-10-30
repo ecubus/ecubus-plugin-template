@@ -1,42 +1,47 @@
 <template>
   <div class="container">
-    <!-- 标题 / Title -->
     <h1>🎉 Hello EcuBus Plugin!</h1>
     <p class="subtitle">这是一个简单的插件示例 / A Simple Plugin Example</p>
 
-    <!-- 调用主进程服务示例 / Call Main Process Service Example -->
-    <div class="card">
-      <h2>👋 Say Hello</h2>
-      <input 
-        v-model="name" 
-        type="text" 
-        placeholder="输入你的名字 / Your name"
-        class="input"
-      />
-      <button @click="sayHello" class="button">Say Hello</button>
-      
-      <!-- 显示响应结果 / Show Response -->
-      <div v-if="message" class="message">
-        {{ message }}
+    <el-card class="card" shadow="hover">
+      <template #header>
+        <div class="card-header">👋 Say Hello</div>
+      </template>
+
+      <el-input v-model="name" placeholder="输入你的名字 / Your name" clearable class="mb-16" />
+
+      <el-button type="primary" @click="sayHello" class="w-100">Say Hello</el-button>
+
+      <div class="mt-12" v-if="message">
+        <el-alert :title="message" type="success" show-icon />
       </div>
-    </div>
+    </el-card>
 
-    <!-- 计数器示例 / Counter Example -->
-    <div class="card">
-      <h2>🔢 Counter</h2>
-      <p class="counter">{{ count }}</p>
-      <button @click="increment" class="button">+1</button>
-    </div>
+    <el-card class="card" shadow="hover">
+      <template #header>
+        <div class="card-header">🔢 Counter</div>
+      </template>
 
-    <!-- 快速开始 / Quick Start -->
-    <div class="card info">
-      <h3>📚 快速开始 / Quick Start</h3>
-      <ul>
-        <li>修改 <code>src/renderer/App.vue</code> 来编辑 UI</li>
-        <li>修改 <code>src/main/index.ts</code> 来添加业务逻辑</li>
-        <li>查看 <code>README.md</code> 了解更多</li>
-      </ul>
-    </div>
+      <div class="counter">{{ count }}</div>
+      <el-button type="success" @click="increment" class="w-100">+1</el-button>
+    </el-card>
+
+    <el-card class="card info" shadow="never">
+      <template #header>
+        <div class="card-header">📚 快速开始 / Quick Start</div>
+      </template>
+      <el-descriptions :column="1" border>
+        <el-descriptions-item label="UI"
+          >修改 <code>src/renderer/App.vue</code> 来编辑 UI</el-descriptions-item
+        >
+        <el-descriptions-item label="Main"
+          >修改 <code>src/main/index.ts</code> 来添加业务逻辑</el-descriptions-item
+        >
+        <el-descriptions-item label="Docs"
+          >查看 <code>README.md</code> 了解更多</el-descriptions-item
+        >
+      </el-descriptions>
+    </el-card>
   </div>
 </template>
 
@@ -44,19 +49,10 @@
 import { ref } from 'vue'
 import { callServerMethod } from '@ecubus-pro/renderer-plugin-sdk'
 
-// 用户名输入 / User name input
 const name = ref('World')
-
-// 响应消息 / Response message
 const message = ref('')
-
-// 计数器 / Counter
 const count = ref(0)
 
-/**
- * 调用主进程服务
- * Call main process service
- */
 async function sayHello() {
   try {
     const response = await callServerMethod('sayHello', name.value)
@@ -67,10 +63,6 @@ async function sayHello() {
   }
 }
 
-/**
- * 增加计数
- * Increment counter
- */
 function increment() {
   count.value++
 }
@@ -78,7 +70,7 @@ function increment() {
 
 <style scoped>
 .container {
-  max-width: 600px;
+  max-width: 680px;
   margin: 0 auto;
   padding: 40px 20px;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif;
@@ -93,59 +85,15 @@ h1 {
 .subtitle {
   text-align: center;
   color: #666;
-  margin-bottom: 40px;
+  margin-bottom: 24px;
 }
 
 .card {
-  background: white;
-  padding: 30px;
   margin-bottom: 20px;
-  border-radius: 8px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 
-.card h2 {
-  margin-top: 0;
-  color: #2c3e50;
-}
-
-.input {
-  width: 100%;
-  padding: 12px;
-  margin: 15px 0;
-  border: 2px solid #ddd;
-  border-radius: 4px;
-  font-size: 16px;
-  box-sizing: border-box;
-}
-
-.input:focus {
-  outline: none;
-  border-color: #42b983;
-}
-
-.button {
-  width: 100%;
-  padding: 12px 24px;
-  background: #42b983;
-  color: white;
-  border: none;
-  border-radius: 4px;
-  font-size: 16px;
-  cursor: pointer;
-  transition: background 0.3s;
-}
-
-.button:hover {
-  background: #35a372;
-}
-
-.message {
-  margin-top: 15px;
-  padding: 15px;
-  background: #f0f9ff;
-  border-left: 4px solid #42b983;
-  border-radius: 4px;
+.card-header {
+  font-weight: 600;
   color: #2c3e50;
 }
 
@@ -154,33 +102,17 @@ h1 {
   font-weight: bold;
   text-align: center;
   color: #42b983;
-  margin: 20px 0;
+  margin: 16px 0 20px;
 }
 
-.info {
-  background: #f8f9fa;
+/* helpers */
+.w-100 {
+  width: 100%;
 }
-
-.info h3 {
-  margin-top: 0;
-  color: #2c3e50;
+.mb-16 {
+  margin-bottom: 16px;
 }
-
-.info ul {
-  margin: 0;
-  padding-left: 20px;
-}
-
-.info li {
-  margin: 10px 0;
-  color: #666;
-}
-
-.info code {
-  background: #e7f2fa;
-  padding: 2px 6px;
-  border-radius: 3px;
-  color: #2c3e50;
-  font-size: 14px;
+.mt-12 {
+  margin-top: 12px;
 }
 </style>

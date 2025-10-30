@@ -25,7 +25,16 @@ export default defineConfig({
         entryFileNames: '[name].js',
         chunkFileNames: '[name].js',
         assetFileNames: '[name].[ext]',
+        manualChunks(id) {
+          if (
+            id.includes('element-plus/dist/index.css')
+          ) {
+            return 'element-plus'
+          } else if (id.includes('element-plus/theme-chalk/dark/css-vars.css')) {
+            return 'element-plus-dark'
+          }
 
+        },
       }
     }
   }
