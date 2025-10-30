@@ -1,5 +1,6 @@
 import { defineConfig } from 'vite'
 import path from 'path'
+import { builtinModules } from 'module'
 
 
 export default defineConfig({
@@ -13,7 +14,9 @@ export default defineConfig({
       fileName: () => 'index.cjs',
     },
     rollupOptions: {
-      external: ["worker_threads", "child_process", "os"],
+      external: [  ...builtinModules,          
+        ...builtinModules.map(m => `node:${m}`),
+      ]
     }
   }
 })
