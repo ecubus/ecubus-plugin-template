@@ -48,8 +48,8 @@
     "format": "prettier --write src/"
   },
   "dependencies": {
-    "@ecubus-pro/main-plugin-sdk": "^0.0.4",
-    "@ecubus-pro/renderer-plugin-sdk": "^0.0.6",
+    "@ecubus-pro/main-plugin-sdk": "^0.0.8",
+    "@ecubus-pro/renderer-plugin-sdk": "^0.0.9",
     "@element-plus/icons-vue": "^2.3.2",
     "element-plus": "^2.11.5",
     "vue": "^3.5.22"

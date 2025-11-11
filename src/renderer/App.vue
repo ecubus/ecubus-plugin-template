@@ -47,7 +47,7 @@
 
 <script setup lang="ts">
 import { ref } from 'vue'
-import { callServerMethod } from '@ecubus-pro/renderer-plugin-sdk'
+import { callServerMethod} from '@ecubus-pro/renderer-plugin-sdk'
 
 const name = ref('World')
 const message = ref('')
