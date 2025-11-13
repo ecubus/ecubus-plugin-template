@@ -1,6 +1,6 @@
 {
   "name": "create-ecubus-plugin",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "description": "Create EcuBus plugin projects from a template",
   "type": "module",
   "author": "EcuBus",
