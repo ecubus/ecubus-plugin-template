@@ -26,6 +26,20 @@
       <el-button type="success" @click="increment" class="w-100">+1</el-button>
     </el-card>
 
+    <el-card class="card" shadow="hover">
+      <template #header>
+        <div class="card-header">🚦 Global Start Status</div>
+      </template>
+
+      <div class="status-indicator">
+        <div
+          class="status-light"
+          :class="{ 'status-on': globalStart, 'status-off': !globalStart }"
+        ></div>
+        <span class="status-text">{{ globalStart ? '运行中 / Running' : '已停止 / Stopped' }}</span>
+      </div>
+    </el-card>
+
     <el-card class="card info" shadow="never">
       <template #header>
         <div class="card-header">📚 快速开始 / Quick Start</div>
@@ -117,5 +131,37 @@ h1 {
 }
 .mt-12 {
   margin-top: 12px;
+}
+
+.status-indicator {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  padding: 20px 0;
+}
+
+.status-light {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.3);
+  transition: all 0.3s ease;
+}
+
+.status-on {
+  background-color: #67c23a;
+  box-shadow: 0 0 12px rgba(103, 194, 58, 0.6);
+}
+
+.status-off {
+  background-color: #f56c6c;
+  box-shadow: 0 0 12px rgba(245, 108, 108, 0.6);
+}
+
+.status-text {
+  font-size: 16px;
+  font-weight: 500;
+  color: #2c3e50;
 }
 </style>
