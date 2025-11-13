@@ -46,13 +46,16 @@
 </template>
 
 <script setup lang="ts">
-import { ref } from 'vue'
-import { callServerMethod} from '@ecubus-pro/renderer-plugin-sdk'
+import { ref, watch } from 'vue'
+import { callServerMethod, useGlobalStart } from '@ecubus-pro/renderer-plugin-sdk'
 
 const name = ref('World')
 const message = ref('')
 const count = ref(0)
-
+const globalStart = useGlobalStart()
+watch(globalStart, (newVal) => {
+  console.log('globalStart', newVal)
+})
 async function sayHello() {
   try {
     const response = await callServerMethod('sayHello', name.value)
