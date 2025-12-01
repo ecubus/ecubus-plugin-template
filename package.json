@@ -1,6 +1,6 @@
 {
   "name": "create-ecubus-plugin",
-  "version": "0.0.7",
+  "version": "0.0.8",
   "description": "Create EcuBus plugin projects from a template",
   "type": "module",
   "author": "EcuBus",
@@ -48,7 +48,7 @@
     "format": "prettier --write src/"
   },
   "dependencies": {
-    "@ecubus-pro/main-plugin-sdk": "^0.0.8",
+    "@ecubus-pro/main-plugin-sdk": "^0.0.9",
     "@ecubus-pro/renderer-plugin-sdk": "^0.0.10",
     "@element-plus/icons-vue": "^2.3.2",
     "element-plus": "^2.11.5",
